@@ -8,7 +8,13 @@ import { usuarioRoutes } from './rutas/usuarios.js'
 // Crear la aplicación Express
 const app = express()
 // Configurar middlewaress
-app.use(cors())
+app.use(cors({
+  origin: [
+    'http://localhost:5173',  // Desarrollo local
+    process.env.FRONTEND_URL  // URL de tu frontend en Railway (la pondremos después)
+  ],
+  credentials: true
+}))
 app.use(bodyParser.json())
 
 

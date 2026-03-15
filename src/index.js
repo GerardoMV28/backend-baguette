@@ -12,7 +12,7 @@ import { initBaseDeDatos } from './bd/init.js'
  */
 try {
   await initBaseDeDatos()
-  const PORT = process.env.PORT //|| 3001
+  const PORT = process.env.PORT || 3002
   app.listen(PORT)
   console.info(`Servidor Express ejecutandose sobre http://localhost:${PORT}`)
 } catch (err) {
