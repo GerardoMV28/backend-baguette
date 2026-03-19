@@ -11,7 +11,7 @@ const app = express()
 app.use(cors({
   origin: [
     'http://localhost:5173',  // Desarrollo local
-    process.env.FRONTEND_URL  // URL de tu frontend en Railway (la pondremos después)
+    'https://frontend-baguette-production-9ebe.up.railway.app'
   ],
   credentials: true
 }))
