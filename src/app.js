@@ -4,6 +4,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import { pedidosRoutes } from './rutas/pedidos.js'
 import { usuarioRoutes } from './rutas/usuarios.js'
+import  authRoutes  from './rutas/auth.js'
 
 // Crear la aplicación Express
 const app = express()
@@ -19,6 +20,7 @@ app.use(bodyParser.json())
 
 
 // Configurar rutas
+app.use('/api/v1/auth', authRoutes)
 pedidosRoutes(app)
 usuarioRoutes(app)
 
