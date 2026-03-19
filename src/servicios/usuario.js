@@ -1,15 +1,15 @@
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import Usuario from '../bd/modelos/usuario.js'  // 👈 CORREGIDO: sin llaves
+import Usuario from '../bd/modelos/usuario.js'
 
-
+// ✅ Exportación nombrada correcta
 export async function createUsuario({ username, password }) {
   const hashedPassword = await bcrypt.hash(password, 10)
   const usuario = new Usuario({ username, password: hashedPassword })
   return await usuario.save()
 }
 
-
+// ✅ Exportación nombrada correcta
 export async function loginUsuario({ username, password }) {
   const usuario = await Usuario.findOne({ username })
   if (!usuario) {
@@ -25,7 +25,7 @@ export async function loginUsuario({ username, password }) {
   return token
 }
 
-
+// ✅ Exportación nombrada correcta
 export async function getUsuarioInfoById(userId) {
   try {
     const usuario = await Usuario.findById(userId)
