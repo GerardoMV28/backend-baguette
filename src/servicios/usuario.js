@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import { Usuario } from '../bd/modelos/usuario.js'
+import Usuario from '../bd/modelos/usuario.js'  // 👈 CORREGIDO: sin llaves
 
 
 export async function createUsuario({ username, password }) {

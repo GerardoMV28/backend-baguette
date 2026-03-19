@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Schema } from 'mongoose';
 import bcrypt from 'bcryptjs';
 
 const userSchema = new Schema({
@@ -11,9 +11,9 @@ const userSchema = new Schema({
     type: String, 
     required: true 
   },
-  nombre: {  // Opcional: para tener nombre completo
+  nombre: {  
     type: String,
-    default: function() { return this.username } // Si no hay nombre, usa username
+    default: function() { return this.username; }
   },
   rol: {
     type: String,
@@ -44,4 +44,6 @@ userSchema.methods.comparePassword = async function(password) {
   return await bcrypt.compare(password, this.password);
 };
 
-export const Usuario = mongoose.model('usuario', userSchema);
+// ✅ Exportación correcta
+const Usuario = mongoose.model('Usuario', userSchema);
+export default Usuario; 

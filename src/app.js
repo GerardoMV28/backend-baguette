@@ -8,7 +8,7 @@ import  authRoutes  from './rutas/auth.js'
 // Crear la aplicación Express
 const app = express()
 
-// 🔍 LOGS DE DEPURACIÓN
+// 🔍 LOGS DE DEPURACIÓN (modificados)
 console.log('🚀 Iniciando servidor...');
 console.log('📦 Módulo authRoutes importado:', authRoutes ? 'SÍ' : 'NO');
 console.log('🔍 Tipo de authRoutes:', typeof authRoutes);
@@ -41,12 +41,6 @@ app.get('/', (req, res) => {
   res.send('Hola from Express!')
 })
 
-// 🔍 LOG DE RUTAS DISPONIBLES
-console.log('✅ Rutas configuradas:');
-app._router.stack.forEach((r) => {
-  if (r.route && r.route.path) {
-    console.log(`   ${Object.keys(r.route.methods).join(', ').toUpperCase()} ${r.route.path}`);
-  }
-});
+console.log('✅ Servidor configurado correctamente');
 
 export { app }
