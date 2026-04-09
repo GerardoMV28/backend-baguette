@@ -25,6 +25,8 @@
     "eslint": "^10.0.3",
     "eslint-config-prettier": "^10.1.8",
     "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2",
+    "express-validator": "^7.3.2",
     "husky": "^9.1.7",
     "jest": "^30.3.0",
     "jsonwebtoken": "^9.0.3",
